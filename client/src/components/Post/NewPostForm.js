@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { isEmpty, timestampParser } from "../Utils";
 import { NavLink } from "react-router-dom";
-import { addPost, getPosts } from "../../JS/actions/post.actions";
+import { addPost, getPosts } from "../../actions/post.actions";
 
 const NewPostForm = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -13,28 +13,28 @@ const NewPostForm = () => {
   const userData = useSelector((state) => state.userReducer);
   const error = useSelector((state) => state.errorReducer.postError);
   const dispatch = useDispatch();
-
+  
   const handlePost = async () => {
     if (message || postPicture || video) {
       const data = new FormData();
-      data.append("posterId", userData._id);
-      data.append("message", message);
+      data.append('posterId', userData._id);
+      data.append('message', message);
       if (file) data.append("file", file);
-      data.append("video", video);
+      data.append('video', video);
 
       await dispatch(addPost(data));
       dispatch(getPosts());
       cancelPost();
     } else {
-      alert("Veuillez entrer un message");
+      alert("Veuillez entrer un message")
     }
   };
-
+ 
   const handlePicture = (e) => {
     setPostPicture(URL.createObjectURL(e.target.files[0]));
     setFile(e.target.files[0]);
-    setVideo("");
-  };
+    setVideo('');
+  }; 
 
   const cancelPost = () => {
     setMessage("");
@@ -42,6 +42,7 @@ const NewPostForm = () => {
     setVideo("");
     setFile("");
   };
+
 
   useEffect(() => {
     if (!isEmpty(userData)) setIsLoading(false);
@@ -57,7 +58,7 @@ const NewPostForm = () => {
           setVideo(embed.split("&")[0]);
           findLink.splice(i, 1);
           setMessage(findLink.join(" "));
-          setPostPicture("");
+          setPostPicture('');
         }
       }
     };

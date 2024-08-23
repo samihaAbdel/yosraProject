@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getTrends } from "../JS/actions/post.actions";
+import { getTrends } from "../actions/post.actions";
 import { isEmpty } from "./Utils";
 import { NavLink } from "react-router-dom";
 

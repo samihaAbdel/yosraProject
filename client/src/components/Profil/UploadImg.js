@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { uploadPicture } from "../../JS/actions/user.actions";
+import { uploadPicture } from "../../actions/user.actions";
 
 const UploadImg = () => {
   const [file, setFile] = useState();
@@ -27,7 +27,7 @@ const UploadImg = () => {
         accept=".jpg, .jpeg, .png"
         onChange={(e) => setFile(e.target.files[0])}
       />
-      <br />
+      <br/>
       <input type="submit" value="Envoyer" />
     </form>
   );

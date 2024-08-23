@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addComment, getPosts } from "../../JS/actions/post.actions";
+import { addComment, getPosts } from "../../actions/post.actions";
 import FollowHandler from "../Profil/FollowHandler";
 import { isEmpty, timestampParser } from "../Utils";
 import EditDeleteComment from "./EditDeleteComment";
@@ -17,7 +17,7 @@ const CardComments = ({ post }) => {
     if (text) {
       dispatch(addComment(post._id, userData._id, text, userData.pseudo))
         .then(() => dispatch(getPosts()))
-        .then(() => setText(""));
+        .then(() => setText(''));
     }
   };
 

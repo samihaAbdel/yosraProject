@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getPosts } from "../JS/actions/post.actions";
+import { getPosts } from "../actions/post.actions";
 import Card from "./Post/Card";
 import { isEmpty } from "./Utils";
 
@@ -11,13 +11,10 @@ const Thread = () => {
   const posts = useSelector((state) => state.postReducer);
 
   const loadMore = () => {
-    if (
-      window.innerHeight + document.documentElement.scrollTop + 1 >
-      document.scrollingElement.scrollHeight
-    ) {
+    if (window.innerHeight + document.documentElement.scrollTop + 1 > document.scrollingElement.scrollHeight) {
       setLoadPost(true);
     }
-  };
+  }
 
   useEffect(() => {
     if (loadPost) {
@@ -26,8 +23,8 @@ const Thread = () => {
       setCount(count + 5);
     }
 
-    window.addEventListener("scroll", loadMore);
-    return () => window.removeEventListener("scroll", loadMore);
+    window.addEventListener('scroll', loadMore);
+    return () => window.removeEventListener('scroll', loadMore);
   }, [loadPost, dispatch, count]);
 
   return (
