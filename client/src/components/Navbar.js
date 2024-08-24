@@ -7,7 +7,7 @@ import Logout from "./Log/Logout";
 const Navbar = () => {
   const uid = useContext(UidContext);
   const userData = useSelector((state) => state.userReducer);
-
+console.log(uid)
   return (
     <nav>
       <div className="nav-container">

@@ -41,7 +41,7 @@ const SignUpForm = () => {
         },
       })
         .then((res) => {
-          console.log(res);
+          // console.log(res);
           if (res.data.errors) {
             pseudoError.innerHTML = res.data.errors.pseudo;
             emailError.innerHTML = res.data.errors.email;
@@ -60,7 +60,7 @@ const SignUpForm = () => {
         <>
           <SignInForm />
           <span></span>
-          <h4 className="success">
+          <h4 className="success" style={{padding:"1%"}}>
             Enregistrement réussi, veuillez-vous connecter
           </h4>
         </>

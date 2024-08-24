@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import LeftNav from "../LeftNav";
 import { useDispatch, useSelector } from "react-redux";
 import UploadImg from "./UploadImg";
-import { updateBio } from "../../actions/user.actions";
+import { updateBio } from "../../JS/actions/user.actions";
 import { dateParser } from "../Utils";
 import FollowHandler from "./FollowHandler";
 
@@ -80,11 +80,14 @@ const UpdateProfil = () => {
                         <img src={user.picture} alt="user-pic" />
                         <h4>{user.pseudo}</h4>
                         <div className="follow-handler">
-                          <FollowHandler idToFollow={user._id} type={'suggestion'} />
+                          <FollowHandler
+                            idToFollow={user._id}
+                            type={"suggestion"}
+                          />
                         </div>
                       </li>
                     );
-                  } 
+                  }
                 }
                 return null;
               })}
@@ -108,7 +111,10 @@ const UpdateProfil = () => {
                         <img src={user.picture} alt="user-pic" />
                         <h4>{user.pseudo}</h4>
                         <div className="follow-handler">
-                          <FollowHandler idToFollow={user._id} type={'suggestion'} />
+                          <FollowHandler
+                            idToFollow={user._id}
+                            type={"suggestion"}
+                          />
                         </div>
                       </li>
                     );

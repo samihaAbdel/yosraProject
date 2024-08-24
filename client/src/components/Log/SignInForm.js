@@ -20,16 +20,16 @@ const SignInForm = () => {
       },
     })
       .then((res) => {
-        console.log(res);
-        if (res.data.errors) {
-          emailError.innerHTML = res.data.errors.email;
-          passwordError.innerHTML = res.data.errors.password;
-        } else {
-          window.location = "/";
-        }
+        window.location = "/";
       })
       .catch((err) => {
-        console.log(err);
+        if (err.response && err.response.data.errors) {
+          // console.log("Errors:", err.response.data.errors);
+          emailError.innerHTML = err.response.data.errors.email;
+          passwordError.innerHTML = err.response.data.errors.password;
+        } else {
+          console.error("Unexpected error:", err);
+        }
       });
   };
 

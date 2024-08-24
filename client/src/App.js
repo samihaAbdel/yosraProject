@@ -3,10 +3,11 @@ import Routes from "./components/Routes";
 import { UidContext } from "./components/AppContext";
 import axios from "axios";
 import { useDispatch } from "react-redux";
-import { getUser } from "./actions/user.actions";
+import { getUser } from "./JS/actions/user.actions";
 
 const App = () => {
   const [uid, setUid] = useState(null);
+  // console.log(uid)
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -30,7 +31,7 @@ const App = () => {
     <UidContext.Provider value={uid}>
       <Routes />
     </UidContext.Provider>
-  )
-}
+  );
+};
 
 export default App;
