@@ -7,7 +7,7 @@ import { applyMiddleware, createStore } from "redux";
 import { getPosts } from "./JS/actions/post.actions";
 import { BrowserRouter } from "react-router-dom";
 // import { createEpicMiddleware } from 'redux-observable';
-import rootReducer from "./reducers";
+import rootReducer from "./JS/reducers";
 import { getUsers } from "./JS/actions/users.actions";
 // dev tools
 import { composeWithDevTools } from "redux-devtools-extension";

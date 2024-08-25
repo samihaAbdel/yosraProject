@@ -4,7 +4,7 @@ import {
   UNFOLLOW_USER,
   UPDATE_BIO,
   UPLOAD_PICTURE,
-} from "../JS/actions/user.actions";
+} from "../actions/user.actions";
 
 const initialState = {};
 

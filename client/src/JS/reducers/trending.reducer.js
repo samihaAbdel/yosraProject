@@ -1,4 +1,4 @@
-import { GET_TRENDS } from "../JS/actions/post.actions";
+import { GET_TRENDS } from "../actions/post.actions";
 
 const initialState = {};
 

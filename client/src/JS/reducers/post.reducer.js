@@ -6,7 +6,7 @@ import {
   LIKE_POST,
   UNLIKE_POST,
   UPDATE_POST,
-} from "../JS/actions/post.actions";
+} from "../actions/post.actions";
 
 const initialState = {};
 
